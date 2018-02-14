@@ -1,0 +1,31 @@
+<persistence
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd" version="2.1">
+
+
+    <persistence-unit name="HelloWorldPU">
+        <!--<jta-data-source>myDS</jta-data-source>-->
+        <!--<class>Message</class>-->
+        <!--<exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:./data/db" />
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value="sa"/>
+
+            <property name="hibernate.default_schema" value="PUBLIC"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <property
+                    name="javax.persistence.schema-generation.database.action"
+                    value="drop-and-create"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
